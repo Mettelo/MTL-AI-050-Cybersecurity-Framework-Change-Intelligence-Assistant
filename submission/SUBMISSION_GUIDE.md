@@ -1,36 +1,25 @@
-# Submission Guide — MTL-AI-050
+# MTL-AI-050 — Submission guide
 
-## Final release sequence
+## Release sequence
 
-1. Complete D1–D12 and reconcile requirements → deliverables → acceptance criteria → tests → evidence.
-2. Freeze all NIST files, inventories, crosswalk graph, gold labels, model/runtime, prompts and dependency versions.
-3. Execute deterministic alignment/change baseline and local-AI held-out evaluation; retain raw outputs and failures.
-4. Run guardrail tests, ≥10 domain tests and 3 UAT tasks; retain defects, repairs and retests.
-5. Demonstrate unchanged, changed, split/merge and unmapped cases; reject one unsupported obligation claim; show edit/approval invalidation.
-6. Have a different member perform a clean rerun from documented resources.
-7. Produce the governance decision brief and demo.
-8. Complete FINAL_SUBMISSION.md, CONTRIBUTIONS.md and evidence index.
-9. Tag the evaluated commit `v1.0-mettelo-submission` and verify reviewer access.
+1. Finish D1–D12 and map requirements to deliverables, acceptance criteria, tests and evidence.
+2. Confirm all NIST source hashes, inventory counts, crosswalk version and reviewer restore access.
+3. Freeze inventory extraction rules, crosswalk graph, change-label policy, prompts, local model/runtime, gold cases and dependency lock.
+4. Run deterministic alignment/change baseline and local-AI workflow. Preserve raw outputs, unmapped candidates, rejected obligation claims and failures.
+5. Execute crosswalk/change/grounding tests and **three UAT tasks**. Resolve all critical/high defects and retain retests.
+6. A distinct member performs a clean rerun from the frozen NIST files and reconciles inventories/mappings.
+7. Produce a 2-page governance decision brief, 8–12 slides and a 5–10 minute demo for the **Cybersecurity Governance Lead**.
+8. Complete `submission/FINAL_SUBMISSION.md`, contribution evidence and evidence index.
+9. Tag the evaluated commit **`v1.0-mettelo-submission`** and verify reviewer access.
+
+## Walkthrough
+
+Demonstrate one unchanged relationship, one wording change, one split/merge, one unmapped candidate, one unsupported obligation rejected and one approved change-register export.
+
+Explain why a crosswalk relationship is not proof of semantic equivalence or compliance.
 
 ## Required evidence bundle
 
-- final repository/SHA/tag;
-- requirements and traceability matrix;
-- source/hashes and inventory reports;
-- crosswalk graph and validation tests;
-- gold labels/split manifest;
-- baseline and AI predictions;
-- metric report and raw failures;
-- citation/obligation-guard results;
-- reviewed change-register examples;
-- UAT, defects and retests;
-- independent rerun record;
-- zero-cost declaration;
-- technical handover;
-- individual contribution evidence.
+Team repo/final SHA/tag; reviewed master commit; NIST source/hashes; inventory and crosswalk validation; traceability; baseline and AI outputs; held-out change metrics; rejected obligation claims; reviewed register examples; UAT/defects; clean rerun; handover; decision brief/demo; contribution evidence.
 
-## Completion rule
-
-A textual diff, screenshots or fluent model prose are not sufficient. Reviewers must be able to reproduce the inventories, mapping relationships, change labels, AI impact hypotheses, citation checks and human-reviewed register from the frozen sources.
-
-Unmet gates remain REWORK/BLOCKED.
+Reviewer records **ACCEPTED / REWORK / BLOCKED** with actual reviewer/date, simulated sponsor role and unresolved issues/owners.

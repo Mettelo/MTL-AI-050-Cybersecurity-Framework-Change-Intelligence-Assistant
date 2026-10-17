@@ -1,45 +1,64 @@
-# Final submission — MTL-AI-050
+# MTL-AI-050 — Final submission template
+
+> Copy to the team repository as `submission/FINAL_SUBMISSION.md`. Replace placeholders only with executed evidence. Unexecuted items remain **NOT RUN** or **BLOCKED**.
 
 ## Identity
-Team name / members / roles:
-Repository URL / commit / release tag:
-Submission date / domain reviewer:
+Team repository/members: [complete]  
+Master: https://github.com/Mettelo/MTL-AI-050-Cybersecurity-Framework-Change-Intelligence-Assistant  
+Reviewed master commit; final team SHA/tag/date: [complete]  
+Delivery lead / independent reviewer: [complete]  
+Simulated sponsor: Cybersecurity Governance Lead
 
-## Business problem and product
-User, decision, scope, workflow and value evidence:
-Distinctness from neighbouring projects:
+## Commissioned decision
+Create a traceable CSF 1.1→2.0 change register that preserves NIST mappings, distinguishes structural from substantive change and supports human governance review.
 
-## Reproduce
-Python/OS/hardware:
-Exact commands from fresh checkout:
-Source release/URL/SHA-256 and excluded data:
-Model runtime/name/digest, prompt version and settings (or baseline-only):
+Approved scope/deviations: [complete]
 
-## Results
-| Metric | Target | Actual | Numerator/denominator | Input split/hash | Evidence path |
-|---|---|---|---|---|---|
-| Fill from acceptance criteria | | | | | |
+## Source/environment/cost
+CSF 1.1/2.0/crosswalk filenames and hashes: [complete]  
+Inventory counts and parser evidence: [complete]  
+Model/runtime/prompt versions: [complete]  
+OS/CPU/RAM/dependency lock/run entry point: [complete]  
+Incremental spend: [complete]
 
-Baseline vs AI comparison:
-Gold creation, independent review, adjudication and split leakage checks:
-Structural grounding vs semantic entailment results:
-Failures, unsupported claims and corrections:
+## Findings
+| Finding | Measured result / denominator | Evidence | Implication / limitation |
+|---|---|---|---|
+| F1 | [complete] | [link] | [complete] |
+| F2 | [complete] | [link] | [complete] |
+| F3 | [complete] | [link] | [complete] |
+| F4 | [complete] | [link] | [complete] |
+| F5 | [complete] | [link] | [complete] |
 
-## Human review and UAT
-Cases executed / date / reviewer / actual results:
-Draft hash / approval file / accepted and rejected record counts:
-Example source citation followed and incorrect AI proposal rejected:
-Known defects and acceptance decision:
+Three next actions + one defer/unknown case: [complete]
 
-## Governance and handover
-Privacy/licence controls:
-Retention and deletion:
-Limitations and unsuitable uses:
-Team contributions:
-Demo link and run instructions:
-Next steps and accountable owner:
+## D1–D12 evidence
+| Deliverable | Artefact | Author/reviewer | Executed result | State |
+|---|---|---|---|---|
+| D1 Discovery/governance workflow | [link] | [names] | [complete] | NOT RUN |
+| D2 Source/provenance | [link] | [names] | [complete] | NOT RUN |
+| D3 Framework inventory pipeline | [link] | [names] | [complete] | NOT RUN |
+| D4 Crosswalk graph | [link] | [names] | [complete] | NOT RUN |
+| D5 Deterministic change baseline | [link] | [names] | [complete] | NOT RUN |
+| D6 Local AI impact layer | [link] | [names] | [complete] | NOT RUN |
+| D7 Citation/obligation guard | [link] | [names] | [complete] | NOT RUN |
+| D8 Working review product | [link] | [names] | [complete] | NOT RUN |
+| D9 Evaluation & assurance | [link] | [names] | [complete] | NOT RUN |
+| D10 UAT & technical handover | [link] | [names] | [complete] | NOT RUN |
+| D11 Governance recommendation/demo | [link] | [names] | [complete] | NOT RUN |
+| D12 Final submission/contributions | [link] | [names] | [complete] | NOT RUN |
 
-## Sign-off
-Domain accuracy reviewer:
-Evaluation/reproducibility reviewer:
-Delivery owner decision and date:
+Acceptance matrix/evaluation: [links]  
+UAT1 governance analyst / UAT2 reviewer / UAT3 sponsor: [links/results]  
+Critical/high defects unresolved: [complete]
+
+## Independent rerun/handover
+Independent operator/date, restored source hashes, entry point, elapsed time, inventory/mapping reconciliation, AI differences and runbook: [complete/links]
+
+## Contribution evidence
+`CONTRIBUTIONS.md`: [link]
+
+## Release decision
+Actual reviewer/date: [complete]  
+Final: **ACCEPTED / REWORK / BLOCKED**  
+Justification: [complete]
