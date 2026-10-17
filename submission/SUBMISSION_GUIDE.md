@@ -1,16 +1,36 @@
-# Submission guide
+# Submission Guide — MTL-AI-050
 
-1. Fork/copy the project into the team repository; assign delivery, engineering, domain, evaluation and governance roles.
-2. Reproduce the baseline from a clean checkout and official resources; capture commands, versions and hashes.
-3. Prepare and independently adjudicate the gold set specified in `project/ACCEPTANCE_CRITERIA.md`. Lock splits before tuning.
-4. Compare baseline and local-AI-assisted output. Publish per-case predictions, metric denominators, errors and rejected hallucinations; do not claim an unexecuted model run.
-5. Execute all UAT cases with a domain user. Demonstrate citation inspection, correction, review rejection and hash-bound export.
-6. Complete `FINAL_SUBMISSION_TEMPLATE.md`, include the 8–10 minute demo recording or reproducible live demo, and tag the submission commit.
+## Final release sequence
+
+1. Complete D1–D12 and reconcile requirements → deliverables → acceptance criteria → tests → evidence.
+2. Freeze all NIST files, inventories, crosswalk graph, gold labels, model/runtime, prompts and dependency versions.
+3. Execute deterministic alignment/change baseline and local-AI held-out evaluation; retain raw outputs and failures.
+4. Run guardrail tests, ≥10 domain tests and 3 UAT tasks; retain defects, repairs and retests.
+5. Demonstrate unchanged, changed, split/merge and unmapped cases; reject one unsupported obligation claim; show edit/approval invalidation.
+6. Have a different member perform a clean rerun from documented resources.
+7. Produce the governance decision brief and demo.
+8. Complete FINAL_SUBMISSION.md, CONTRIBUTIONS.md and evidence index.
+9. Tag the evaluated commit `v1.0-mettelo-submission` and verify reviewer access.
 
 ## Required evidence bundle
-Team repository URL/commit/tag; final report; source and split manifests; test logs; AI configuration/digest; gold/predictions and evaluation report; UAT signed results; privacy/licence notes; reviewed export with matching draft/approval; contributions and limitations. Use public/redacted artifacts only.
 
-## Completion judgement
-Inventory coverage 108/108 CSF 1.1 and 106/106 CSF 2.0 outcomes; mapping pair F1 ≥0.90; adjudicated change-label macro F1 ≥0.85; citation validity 100%; both-version citations for matched changes 100%; unsupported legal/compliance obligations 0; human impact usefulness median ≥4/5; every exported register row reviewed.
+- final repository/SHA/tag;
+- requirements and traceability matrix;
+- source/hashes and inventory reports;
+- crosswalk graph and validation tests;
+- gold labels/split manifest;
+- baseline and AI predictions;
+- metric report and raw failures;
+- citation/obligation-guard results;
+- reviewed change-register examples;
+- UAT, defects and retests;
+- independent rerun record;
+- zero-cost declaration;
+- technical handover;
+- individual contribution evidence.
 
-Report unmet gates explicitly with remediation. Citation checks, tests and a demo cannot replace semantic quality evidence.
+## Completion rule
+
+A textual diff, screenshots or fluent model prose are not sufficient. Reviewers must be able to reproduce the inventories, mapping relationships, change labels, AI impact hypotheses, citation checks and human-reviewed register from the frozen sources.
+
+Unmet gates remain REWORK/BLOCKED.

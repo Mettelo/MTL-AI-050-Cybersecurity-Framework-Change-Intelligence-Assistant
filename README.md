@@ -1,65 +1,104 @@
 # MTL-AI-050 — Cybersecurity Framework Change Intelligence Assistant
 
-## Business problem and user
-Governance teams migrating from CSF 1.1 to CSF 2.0 need traceable explanations of changed outcomes and potential policy ownership implications. A textual diff alone confuses renumbering with substantive change.
+**Mettelo Project Studio**  
+**Track:** AI Engineering / Cybersecurity Governance  
+**Engagement:** Simulated framework-change intelligence product  
+**Team:** 3–5 people  
+**Delivery window:** 8 weeks  
+**Core completion cost:** £0 incremental software/service spend using existing equipment
 
-**Primary users:** Cybersecurity governance lead, risk owner, control owner and policy reviewer.
+## Business problem
 
-## Working product
-Align Core outcomes using NIST crosswalk relationships, detect changed/unchanged wording and unmapped addition/removal candidates, preserve split/merge cardinality, explain possible organisational impact and produce a reviewer-approved register. Full narrative sections are a documented manual extension, not silently claimed automated coverage.
+Security governance teams migrating from NIST CSF 1.1 to CSF 2.0 need more than a textual diff. Renumbering, split/merge relationships, moved outcomes and wording changes can be mistaken for substantive control changes. Manual comparison is slow and difficult to audit.
 
-**Workflow:** NIST CSF 1.1/2.0 Core exports + NIST crosswalk → versioned outcome inventory → many-to-many alignment → textual change classification → possible organisational impact → citations to both versions → reviewed change register.
+The organisation needs a local assistant that aligns framework outcomes, distinguishes mapping from substantive change, produces evidence-linked change explanations and lets human reviewers decide what may require policy, ownership or control review.
 
-This repository includes a runnable Python command-line application, source importers, a small frozen demonstration input, automated control tests, optional local AI explanations and a hash-bound review/export workflow. The baseline is deterministic; it is not represented as an evaluated language model. Meeting extraction and ATT&CK mappings are candidates. AI quality acceptance still requires the held-out evaluation specified below.
+## Commissioned decision
 
-## Run locally at zero cost
-Install Python 3.11 or newer. No paid APIs, accounts, cloud hosting or Python packages are required. Run commands from this repository root, with normal Python (never `python -O`). Windows users may use `py -3` in place of `python`.
+> Can a local AI-assisted workflow create a reliable, traceable CSF 1.1 → 2.0 change register that reduces manual comparison effort without inventing legal obligations or claiming compliance?
+
+## What the team will build
+
+Build a working local product that:
+
+1. downloads and freezes CSF 1.1, CSF 2.0 and the NIST crosswalk;
+2. creates complete outcome inventories for both framework versions;
+3. preserves NIST many-to-many crosswalk relationships;
+4. detects unchanged, wording-changed, moved, split/merged and unmapped candidate relationships;
+5. distinguishes crosswalk evidence from team-derived change labels;
+6. runs a local open-weight model to draft bounded impact hypotheses;
+7. cites both old and new framework evidence for matched changes;
+8. blocks unsupported legal/compliance obligations;
+9. lets governance reviewers accept, reject or edit every register row;
+10. invalidates approval after material edits;
+11. exports a reviewed change register and decision brief;
+12. evaluates alignment, change labelling, citation accuracy and impact usefulness on a held-out gold set.
+
+The product does **not** certify compliance, perform legal interpretation, automate policy changes or claim that a crosswalk means semantic equivalence.
+
+## Practical use case
+
+A cybersecurity governance lead selects the frozen CSF 1.1 → 2.0 migration set. The assistant shows aligned outcomes, flags wording or structural changes, proposes possible ownership/policy implications and provides citations to both versions. Reviewers validate each row, reject unsupported implications and approve a final change register for internal planning.
+
+## Approved resources
+
+- NIST CSF 1.1 Core
+- NIST CSF 2.0 Core
+- NIST CSF 1.1 → 2.0 crosswalk
+
+See [Data Guidance](data/README.md) for exact source URLs and preservation rules.
+
+## Required workflow
 
 ```text
-python -m unittest discover -s tests -v
-python app.py run --input data/reference/demo.json --output runs/draft.json
-python app.py review-template --draft runs/draft.json --output runs/decisions.json
+Frozen CSF 1.1 + CSF 2.0 + crosswalk
+        ↓
+Outcome inventory
+        ↓
+Many-to-many alignment graph
+        ↓
+Deterministic text / structure comparison
+        ↓
+Change classification
+        ↓
+Local AI impact hypothesis
+        ↓
+Citation / obligation guard
+        ↓
+Human governance review
+        ↓
+Approved change register
 ```
 
-Open `runs/draft.json` alongside its source. For every record in `runs/decisions.json`, change `pending` to `accept` or `reject`, and write a substantive `note`. Review all AI proposals attached to that record as well. To correct factual content, edit the draft, then review that final draft. Approval is a local attestation, not an identity-authenticated signature.
+## Minimum evaluation standard
 
-```text
-python app.py approve --draft runs/draft.json --decisions runs/decisions.json --reviewer "Reviewer Name" --output runs/approval.json
-python app.py export --draft runs/draft.json --approval runs/approval.json --output runs/reviewed.csv
-```
+Create at least 40 adjudicated alignment/change cases spanning all CSF 2.0 Functions, including Govern, moved outcomes, wording changes, many-to-many split/merge cases and unmapped candidates.
 
-Export blocks incomplete review, unknown citations, quote mismatches and edits after approval. CSV includes evidence, details, AI proposals and review notes. JSON remains the detailed evidence-linked minutes, handover or change register. Keep draft/approval together for audit.
+Release targets:
 
-## Use the complete official resources
-Source: **NIST CSF 1.1 (2018), CSF 2.0 (2024), their Core exports and the 2024-02-20 NIST crosswalk**. See [data guidance](data/README.md) and [source register](data/SOURCE_REGISTER.md).
+- inventory coverage: 108/108 CSF 1.1 outcomes;
+- inventory coverage: 106/106 CSF 2.0 outcomes;
+- mapping-pair F1 ≥ 0.90;
+- change-label macro F1 ≥ 0.85;
+- citation validity = 100%;
+- both-version citations for matched changes = 100%;
+- unsupported legal/compliance obligations = 0;
+- human impact usefulness median ≥ 4/5;
+- every exported register row human-reviewed.
 
-```text
-python scripts/fetch_sources.py
-python app.py prepare --source data/raw --output runs/framework.json
-python app.py run --input runs/framework.json --output runs/full-draft.json
-```
+## Zero-cost implementation
 
-Raw downloads are local and ignored by Git. The bundled input is a frozen reproducible demonstration; it is not a held-out benchmark.
+Use Python, local files/SQLite, pandas/openpyxl as needed, Streamlit or CLI, pytest/unittest and a local open-weight model via Ollama or llama.cpp. No paid API, legal database, commercial GRC platform, cloud inference or hosted vector service is required.
 
-## Optional local AI
-Install the open-source Ollama runtime and download a locally runnable model, for example the Apache-2.0 `qwen2.5:3b`. A 3B quantised model generally needs several GB of RAM/disk; CPU execution is slower. Record the exact model digest from your runtime, hardware and generation settings. Model/runtime downloads need internet once; inference stays at `127.0.0.1:11434` and requires no API key.
+## Delivery standard
 
-```text
-ollama pull qwen2.5:3b
-python app.py run --input data/reference/demo.json --output runs/ai-draft.json --model qwen2.5:3b
-```
+Final acceptance requires reproducible source acquisition, complete inventories, crosswalk-preserving alignment, deterministic comparison, local model execution, evidence-linked impact hypotheses, obligation guards, human review, measured evaluation, UAT, independent rerun, technical handover and individual contribution evidence.
 
-AI adds cited explanation proposals to existing records; it cannot approve, overwrite source evidence or execute operational actions. Missing/invalid citations reject the AI result. Quote validity does **not** prove semantic entailment: a reviewer must inspect every proposal. Large meetings/registers may exceed model context; select a documented bounded subset, record excluded items, or use the deterministic full run. No silent truncation is performed. If Ollama is absent or returns invalid JSON, use the baseline and report AI unavailable; do not claim AI evaluation passed.
+See [Deliverables](project/DELIVERABLES.md), [Acceptance Criteria](project/ACCEPTANCE_CRITERIA.md), [Data Guidance](data/README.md) and [Submission Guide](submission/SUBMISSION_GUIDE.md).
 
-## Evaluation and completion
-Create a stratified gold set of at least 40 alignment/change cases covering all six CSF 2.0 Functions, Govern, moved outcomes, wording revisions, many-to-many splits/merges and unmapped candidates. Two governance reviewers compare both durable documents and crosswalk before adjudicating final labels. Split 10 development, 10 validation and 20 held-out cases; keep entire connected crosswalk components in one split to prevent leakage. Score mapping pair precision/recall/F1, change-label macro F1, old/new citation correctness, inventory coverage, unsupported obligation rate and human impact usefulness (1–5). Unmapped candidates cannot be counted as confirmed additions/removals without adjudication.
+## Scope boundaries
 
-**Delivery gates:** Inventory coverage 108/108 CSF 1.1 and 106/106 CSF 2.0 outcomes; mapping pair F1 ≥0.90; adjudicated change-label macro F1 ≥0.85; citation validity 100%; both-version citations for matched changes 100%; unsupported legal/compliance obligations 0; human impact usefulness median ≥4/5; every exported register row reviewed.
+This is framework-change intelligence, not compliance certification or legal advice. A NIST mapping/crosswalk relationship does not establish one-to-one semantic equivalence or prove that an organisation satisfies either outcome.
 
-See [project pack](project/README.md), [evaluation protocol](evaluation/README.md), [UAT](project/UAT_AND_DEMO.md) and [submission guide](submission/SUBMISSION_GUIDE.md). Automated integrity checks and a frozen demonstration are supplied; human acceptance, semantic gold and local-model evaluation are not fabricated.
-
-## Scope boundary
-A document/version change intelligence product, distinct from detection, vulnerability scoring, phishing, SOC analytics and compliance certification. It does not determine whether an organisation complies with a law or framework. Crosswalk relationships are not equivalence.
-
-## Repository map
-`app.py` review/export/AI orchestration; `engine.py` domain logic and ingestion; `scripts/` source acquisition and evaluation; `tests/` executable checks; `data/reference/` frozen small inputs; `data/metadata/` provenance and schemas; `project/` delivery contract; `evaluation/` metrics/results; `submission/` final evidence standards.
+---
+**Mettelo — Built for What’s Next**
