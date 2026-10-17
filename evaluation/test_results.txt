@@ -1,0 +1,19 @@
+test_citations_resolve (test_controls.EvidenceControls.test_citations_resolve) ... ok
+test_edit_invalidates_approval (test_controls.EvidenceControls.test_edit_invalidates_approval) ... ok
+test_export_only_accepted (test_controls.EvidenceControls.test_export_only_accepted) ... ok
+test_local_ai_accepts_grounded_json (test_controls.EvidenceControls.test_local_ai_accepts_grounded_json) ... ok
+test_local_ai_fabricated_citation_rejected (test_controls.EvidenceControls.test_local_ai_fabricated_citation_rejected) ... ok
+test_partial_review_blocked (test_controls.EvidenceControls.test_partial_review_blocked) ... ok
+test_pending_review_blocked (test_controls.EvidenceControls.test_pending_review_blocked) ... ok
+test_reject_fabricated_quote (test_controls.EvidenceControls.test_reject_fabricated_quote) ... ok
+test_reject_unknown_source (test_controls.EvidenceControls.test_reject_unknown_source) ... ok
+test_reproducible (test_controls.EvidenceControls.test_reproducible) ... ok
+test_complete_inventory_coverage (test_domain.FrameworkCases.test_complete_inventory_coverage) ... ok
+test_many_to_many_preserved (test_domain.FrameworkCases.test_many_to_many_preserved) ... ok
+test_matched_records_cite_both_versions (test_domain.FrameworkCases.test_matched_records_cite_both_versions) ... ok
+test_unmapped_is_candidate (test_domain.FrameworkCases.test_unmapped_is_candidate) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.285s
+
+OK

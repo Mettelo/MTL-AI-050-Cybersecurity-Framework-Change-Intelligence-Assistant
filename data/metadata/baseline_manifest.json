@@ -1,0 +1,26 @@
+[
+  {
+    "filename": "csf11.xlsx",
+    "url": "https://www.nist.gov/document/2018-04-16frameworkv11core1xlsx",
+    "resource": "NIST CSF 1.1 Core",
+    "sha256": "45ab282f6033d538cb84fdabe9068e497e52dee1a0e1e0208ddafea210244303",
+    "bytes": 36146,
+    "acquired_date": "2026-10-17"
+  },
+  {
+    "filename": "csf20.xlsx",
+    "url": "https://csrc.nist.gov/extensions/nudp/services/json/csf/download?olirids=all",
+    "resource": "NIST CSF 2.0 Reference Tool export; endpoint currently returns XLSX despite JSON in URL",
+    "sha256": "1b5f53a34ce1008d3fef0605e69f021d7a538d48850c41d1708f6a2f003a49af",
+    "bytes": 144727,
+    "acquired_date": "2026-10-17"
+  },
+  {
+    "filename": "crosswalk.xlsx",
+    "url": "https://csrc.nist.gov/csrc/media/Projects/olir/documents/submissions/CSFv1.1_to_CSFv2.0_CROSSWALK_20240220.xlsx",
+    "resource": "NIST CSF 1.1 to 2.0 crosswalk, 2024-02-20",
+    "sha256": "3c0f2edc9206a828f6795241af2cf6e2bf390522ca97ff01dfc5156f5d9e52a4",
+    "bytes": 26451,
+    "acquired_date": "2026-10-17"
+  }
+]

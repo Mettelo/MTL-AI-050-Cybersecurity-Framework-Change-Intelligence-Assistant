@@ -1,0 +1,24 @@
+{
+  "scope": "Frozen demo structural checks only; no semantic or model benchmark claim",
+  "project": "MTL-AI-050",
+  "input_sha256": "3a63a0abe4da759af8e93505174b472f5108be135733917ec915598444a46d2e",
+  "output_sha256": "7f9c0b8091cd7eeb3161eca0f1572a38c1e668aa7c130c2dfed277e6091fd74a",
+  "records": 173,
+  "record_kinds": {
+    "changed_text": 153,
+    "unchanged_text": 2,
+    "removal_candidate": 2,
+    "addition_candidate": 16
+  },
+  "citation_valid_count": 328,
+  "citation_total": 328,
+  "baseline_repeat_identical": true,
+  "semantic_benchmark": "pending independently adjudicated gold",
+  "local_model_evaluation": "not executed; no model runtime assumed",
+  "human_uat": "pending domain reviewer",
+  "inventory_coverage": {
+    "old": 108,
+    "new": 106,
+    "relationships": 155
+  }
+}

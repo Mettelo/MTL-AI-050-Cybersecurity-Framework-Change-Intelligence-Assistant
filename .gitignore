@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+runs/
+data/raw/*
+!data/raw/README.md
+data/metadata/download_manifest.json
