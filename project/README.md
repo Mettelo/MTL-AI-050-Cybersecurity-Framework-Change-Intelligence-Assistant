@@ -1,15 +1,26 @@
-# Project delivery contract
+# MTL-AI-050 — Project pack
 
-MTL-AI-050 — Cybersecurity Framework Change Intelligence Assistant.
+This directory defines the delivery contract for **Cybersecurity Framework Change Intelligence Assistant**. The master repository specifies what the team is commissioned to solve, the approved evidence/resources, required deliverables, acceptance standard and submission rules. It does **not** contain the team's implementation.
 
-Read in order: [brief](PROJECT_BRIEF.md), [business context](BUSINESS_CONTEXT.md), [deliverables](DELIVERABLES.md), [acceptance](ACCEPTANCE_CRITERIA.md), [governance](GOVERNANCE.md), [UAT/demo](UAT_AND_DEMO.md). The root README contains executable setup instructions; the data pack defines provenance; submission documents define evidence needed for sign-off.
+Read in order:
 
-## Delivery stages
-1. Agree users, scope and source licence; freeze resources and a baseline run.
-2. Validate ingestion and stable evidence identifiers; document failures and exclusions.
-3. Implement candidate generation, grounding validation and local model comparison.
-4. Adjudicate gold labels, lock splits, measure baseline and model-assisted outputs.
-5. Conduct user review, demonstrate blocked exports, address failures and submit.
+1. [PROJECT_BRIEF.md](PROJECT_BRIEF.md) — commission, users, scope and delivery direction.
+2. [BUSINESS_CONTEXT.md](BUSINESS_CONTEXT.md) — organisational problem, decisions and evidence boundaries.
+3. [DELIVERABLES.md](DELIVERABLES.md) — D1–D12 outputs the team is expected to produce.
+4. [ACCEPTANCE_CRITERIA.md](ACCEPTANCE_CRITERIA.md) — objective evidence required for acceptance.
+5. [GOVERNANCE.md](GOVERNANCE.md) — responsible-AI, review and evidence controls.
+6. [UAT_AND_DEMO.md](UAT_AND_DEMO.md) — required user acceptance and demonstration scenarios where applicable.
+7. [../data/README.md](../data/README.md) — approved source/data guidance.
+8. [../submission/README.md](../submission/README.md) — how to create and submit the separate team repository.
+
+## Delivery principle
+
+The team creates **MTL-AI-050-<team-name>** under the Mettelo GitHub organisation and performs all implementation, testing, evaluation, UAT, handover and final submission there.
+
+The master may contain approved raw/reference inputs so participants can obtain the correct project source. Their presence does not mean ingestion, analysis, modelling, AI evaluation or acceptance has already been completed.
 
 ## Definition of complete
-All required artifacts are present, tests pass, held-out targets are evidenced, the domain reviewer signs UAT and the product can be reproduced without a paid service. A demo alone is not completion of semantic AI acceptance.
+
+Completion requires executed evidence against the project deliverables and acceptance criteria, a working product in the team repository, human review where required, UAT, independent rerun, technical handover and contribution evidence.
+
+A filled template, screenshot, demo video or fluent AI output alone is not completion.
